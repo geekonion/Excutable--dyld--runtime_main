@@ -54,6 +54,9 @@
 #include "ImageLoaderMachOClassic.h"
 #include "mach-o/dyld_images.h"
 
+
+#define CRSetCrashLogMessage2(...)
+
 // in dyldStartup.s
 extern "C" void stub_binding_helper_i386_old();
 

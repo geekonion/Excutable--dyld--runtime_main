@@ -45,7 +45,7 @@
 #endif
 
 #if __x86_64__ || __i386__
-	#include <CrashReporterClient.h>
+//	#include <CrashReporterClient.h>
 #else
 	// work around until iOS has CrashReporterClient.h
 	#define CRSetCrashLogMessage(x)

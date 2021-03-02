@@ -53,6 +53,8 @@
 #endif
 #include "mach-o/dyld_images.h"
 
+#define CRSetCrashLogMessage2(...)
+
 // <rdar://problem/8718137> use stack guard random value to add padding between dylibs
 extern "C" long __stack_chk_guard;
 

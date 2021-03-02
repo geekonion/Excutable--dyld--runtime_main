@@ -37,7 +37,7 @@
 #include <libkern/OSAtomic.h>
 
 #include "ImageLoader.h"
-
+#define CRSetCrashLogMessage2(...)
 
 uint32_t								ImageLoader::fgImagesUsedFromSharedCache = 0;
 uint32_t								ImageLoader::fgImagesWithUsedPrebinding = 0;
@@ -1146,7 +1146,7 @@ void ImageLoader::addSuffix(const char* path, const char* suffix, char* result)
 
 
 VECTOR_NEVER_DESTRUCTED_IMPL(ImageLoader::InterposeTuple);
-VECTOR_NEVER_DESTRUCTED_IMPL(ImagePair);
+//VECTOR_NEVER_DESTRUCTED_IMPL(ImagePair);
 
 
 

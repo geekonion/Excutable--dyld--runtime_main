@@ -27,7 +27,8 @@
 
 #include "ImageLoader.h"
 #include "mach-o/dyld_priv.h"
-
+#define CRSetCrashLogMessage(...)
+#define CRSetCrashLogMessage2(...)
 
 
 //

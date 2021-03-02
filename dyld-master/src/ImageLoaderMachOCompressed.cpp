@@ -45,6 +45,8 @@
 	#define EXPORT_SYMBOL_FLAGS_KIND_ABSOLUTE			0x02
 #endif
 
+#define CRSetCrashLogMessage2(...)
+
 // relocation_info.r_length field has value 3 for 64-bit executables and value 2 for 32-bit executables
 #if __LP64__
 	#define RELOC_SIZE 3

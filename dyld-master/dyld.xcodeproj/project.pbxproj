@@ -41,6 +41,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5A52A20E25E92082009234ED /* libpthread.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A52A20D25E9207B009234ED /* libpthread.tbd */; };
 		F908134C11D3ED6200626CC1 /* dyld.h in usr|include|mach-o */ = {isa = PBXBuildFile; fileRef = F9ED4CEA0630A80600DF4E74 /* dyld.h */; };
 		F908134D11D3ED6200626CC1 /* dyld_images.h in usr|include|mach-o */ = {isa = PBXBuildFile; fileRef = F98D274C0AA79D7400416316 /* dyld_images.h */; };
 		F908135911D3FA8700626CC1 /* dlfcn.h in usr|include */ = {isa = PBXBuildFile; fileRef = F99EE6AE06B48D4200BF1992 /* dlfcn.h */; };
@@ -96,6 +97,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
 			fileType = sourcecode.cpp;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -104,6 +107,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
 			fileType = sourcecode.c;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -112,6 +117,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
 			fileType = sourcecode.asm;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -120,6 +127,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
 			fileType = sourcecode.cpp;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -128,6 +137,8 @@
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.gcc;
 			fileType = sourcecode.c;
+			inputFiles = (
+			);
 			isEditable = 1;
 			outputFiles = (
 			);
@@ -303,6 +314,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A52A20D25E9207B009234ED /* libpthread.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpthread.tbd; path = usr/lib/libpthread.tbd; sourceTree = SDKROOT; };
 		834A90AB0E1D85D600555761 /* ObjCLegacyAbstraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ObjCLegacyAbstraction.hpp; sourceTree = "<group>"; };
 		834A90AC0E1D85D600555761 /* ObjCModernAbstraction.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ObjCModernAbstraction.hpp; sourceTree = "<group>"; };
 		EF799FE9070D27BB00F78484 /* dyld.1 */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.man; name = dyld.1; path = doc/man/man1/dyld.1; sourceTree = SOURCE_ROOT; };
@@ -385,6 +397,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A52A20B25E92070009234ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A52A20E25E92082009234ED /* libpthread.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F93937300A94FAF700070A07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -418,6 +438,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A52A20C25E9207B009234ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A52A20D25E9207B009234ED /* libpthread.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF799FE7070D27BB00F78484 /* man */ = {
 			isa = PBXGroup;
 			children = (
@@ -500,6 +528,7 @@
 				F9ED4CBE0630A7B100DF4E74 /* include */,
 				F9ED4C990630A76000DF4E74 /* Products */,
 				F939373D0A94FC4700070A07 /* launch-cache */,
+				5A52A20C25E9207B009234ED /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -647,6 +676,7 @@
 				F907E2490FA6469000BFEDBD /* install iPhone file */,
 				F9213B3F18BFC9CB001CB6E8 /* simulator entitlement */,
 				F99B8EB60FEC236500701838 /* suppress macosx dyld_shared_cache_util */,
+				5A52A20B25E92070009234ED /* Frameworks */,
 			);
 			buildRules = (
 				F921D318070376B0000D1056 /* PBXBuildRule */,
@@ -965,21 +995,27 @@
 		F908134311D3ED0C00626CC1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALLHDRS_COPY_PHASE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = libdyld;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		F908134411D3ED0C00626CC1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INSTALLHDRS_COPY_PHASE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = libdyld;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -987,7 +1023,8 @@
 		F93937350A94FB2900070A07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1004,6 +1041,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-std=c++11",
 					"-stdlib=libc++",
@@ -1011,7 +1049,7 @@
 				);
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PRODUCT_NAME = update_dyld_shared_cache;
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 				VALID_ARCHS = "x86_64 i386";
 			};
 			name = Debug;
@@ -1020,7 +1058,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F971DD161A4A0E0700BBDD52 /* update_dyld_shared_cache.xcconfig */;
 			buildSettings = {
-				ARCHS = x86_64;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
@@ -1031,6 +1070,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-std=c++11",
 					"-stdlib=libc++",
@@ -1038,7 +1078,7 @@
 				);
 				OTHER_LDFLAGS = "-stdlib=libc++";
 				PRODUCT_NAME = update_dyld_shared_cache;
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = debugging;
 				VALID_ARCHS = "x86_64 i386";
@@ -1056,7 +1096,9 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				INSTALL_PATH = "$(INSTALL_LOCATION)/usr/local/bin";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = dyld_shared_cache_util;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1069,7 +1111,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
 				INSTALL_PATH = "$(INSTALL_LOCATION)/usr/local/bin";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = dyld_shared_cache_util;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 			};
 			name = Release;
@@ -1087,6 +1131,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/lib";
 				MACH_O_TYPE = mh_bundle;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-stdlib=libc++",
 					"$(OTHER_CFLAGS)",
@@ -1096,6 +1141,7 @@
 					"-Wl,-exported_symbol,_dyld_shared_cache_extract_dylibs_progress",
 				);
 				PRODUCT_NAME = dsc_extractor;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1111,6 +1157,7 @@
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				INSTALL_PATH = "$(INSTALL_PATH_PREFIX)$(INSTALL_LOCATION)/usr/lib";
 				MACH_O_TYPE = mh_bundle;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-stdlib=libc++",
 					"$(OTHER_CFLAGS)",
@@ -1120,6 +1167,7 @@
 					"-Wl,-exported_symbol,_dyld_shared_cache_extract_dylibs_progress",
 				);
 				PRODUCT_NAME = dsc_extractor;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1129,7 +1177,7 @@
 			baseConfigurationReference = F971DD141A4A0E0700BBDD52 /* dyld.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LIBRARY = "libc++";
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
 				DEAD_CODE_STRIPPING = YES;
@@ -1150,6 +1198,7 @@
 					"./launch-cache",
 				);
 				LD_GENERATE_MAP_FILE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = (
 					"-stdlib=libc++",
@@ -1165,7 +1214,7 @@
 					"$(ALIGNMENT)",
 					"$(ENTRY)",
 				);
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 				STRIPFLAGS = "-S";
 				UNSTRIPPED_PRODUCT = NO;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1180,6 +1229,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F971DD141A4A0E0700BBDD52 /* dyld.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LIBRARY = "libc++";
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
 				DEAD_CODE_STRIPPING = YES;
@@ -1197,6 +1247,7 @@
 					"./launch-cache",
 				);
 				LD_GENERATE_MAP_FILE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				ORDER_FILE = "$(SRCROOT)/src/dyld.order";
 				"OTHER_CFLAGS[arch=armv6]" = "-mthumb";
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1213,7 +1264,7 @@
 					"$(ALIGNMENT)",
 					"$(ENTRY)",
 				);
-				SDKROOT = macosx.internal;
+				SDKROOT = macosx;
 				STRIPFLAGS = "-S";
 				UNSTRIPPED_PRODUCT = NO;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1229,7 +1280,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F971DD151A4A0E0700BBDD52 /* libdyld.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1239,6 +1291,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
 				INSTALLHDRS_COPY_PHASE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-mno-global-merge";
 				OTHER_LDFLAGS = (
 					"-nostdlib",
@@ -1248,6 +1301,7 @@
 					"-L$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = dyld;
+				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -1261,6 +1315,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F971DD151A4A0E0700BBDD52 /* libdyld.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
 				DEAD_CODE_STRIPPING = YES;
@@ -1274,6 +1329,7 @@
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/include";
 				INSTALLHDRS_COPY_PHASE = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-mno-global-merge";
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-exceptions",
@@ -1302,6 +1358,7 @@
 					"-L$(SDKROOT)/usr/lib/system",
 				);
 				PRODUCT_NAME = dyld;
+				SDKROOT = macosx;
 				SEPARATE_STRIP = YES;
 				SKIP_INSTALL = NO;
 				STRIP_INSTALLED_PRODUCT = YES;
@@ -1317,14 +1374,20 @@
 		F9D8C7E6087B087300E93EFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = all;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		F9D8C7E8087B087300E93EFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = all;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1355,11 +1418,13 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INSTALL_PATH = "$(INSTALL_LOCATION)/usr/local/lib";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-stdlib=libc++",
 					"$(OTHER_CFLAGS)",
 				);
 				PRODUCT_NAME = dsc;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1382,11 +1447,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALLHDRS_COPY_PHASE = YES;
 				INSTALL_PATH = "$(INSTALL_LOCATION)/usr/local/lib";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-stdlib=libc++",
 					"$(OTHER_CFLAGS)",
 				);
 				PRODUCT_NAME = dsc;
+				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
 			name = Release;

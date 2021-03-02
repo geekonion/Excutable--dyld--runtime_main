@@ -53,6 +53,7 @@
 #include <System/sys/csr.h>
 #include <_simple.h>
 #include <os/lock_private.h>
+#include <pthread/pthread.h>
 
 
 #ifndef CPU_SUBTYPE_ARM_V5TEJ
@@ -98,7 +99,10 @@
 #if DYLD_SHARED_CACHE_SUPPORT
 #include "dyld_cache_format.h"
 #endif
-#include <coreSymbolicationDyldSupport.h>
+//#include <coreSymbolicationDyldSupport.h>
+void coresymbolication_load_notifier(void *connection, uint64_t load_timestamp, const char *image_path, const struct mach_header *mach_header);
+void coresymbolication_unload_notifier(void *connection, uint64_t unload_timestamp, const char *image_path, const struct mach_header *mach_header);
+
 #if TARGET_IPHONE_SIMULATOR
 	extern "C" void xcoresymbolication_load_notifier(void *connection, uint64_t load_timestamp, const char *image_path, const struct mach_header *mach_header);
 	extern "C" void xcoresymbolication_unload_notifier(void *connection, uint64_t unload_timestamp, const char *image_path, const struct mach_header *mach_header);
@@ -4517,7 +4521,7 @@ static SyscallHelpers sSysCalls = {
 		&vm_protect,
 		&vlog, 
 		&vwarn, 
-		&pthread_mutex_lock, 
+		&pthread_mutex_lock,
 		&pthread_mutex_unlock,
 		&mach_thread_self, 
 		&mach_port_deallocate, 
